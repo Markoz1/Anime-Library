@@ -14,6 +14,8 @@
     <body>
            <div class="main-wrapper">
                 <div class="app" id="app">
+                    @include('layouts.header.main')
+                    @include('layouts.sidebar')
                     <div class="sidebar-overlay" id="sidebar-overlay"></div>
                     <div class="sidebar-mobile-menu-handle" id="sidebar-mobile-menu-handle"></div>
                     <div class="mobile-menu-handle"></div>
