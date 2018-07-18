@@ -1,0 +1,13 @@
+ .carousel-indicators
+  {
+    bottom:-8%;
+    /* bottom:-40px; */
+  }
+  .carousel-indicators .active {
+    background-color: #fe821d;
+}
+.card-img-top {
+    width: 100%;
+    height: 10vw;
+    object-fit: cover;
+}
