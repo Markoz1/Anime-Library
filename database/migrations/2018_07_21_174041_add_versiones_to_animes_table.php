@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddVersionsToAnimesTable extends Migration
+class AddVersionesToAnimesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -15,7 +15,7 @@ class AddVersionsToAnimesTable extends Migration
     {
         Schema::table('animes', function (Blueprint $table) {
             $table->unsignedInteger('version_id')->after('ordered_chapters');
-            $table->foreign('version_id')->references('id')->on('versions');
+            $table->foreign('version_id')->references('id')->on('versiones');
         });
     }
 

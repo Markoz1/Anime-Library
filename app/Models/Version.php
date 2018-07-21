@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Version extends Model
 {
-    protected $table = 'versions';
+    protected $table = 'versiones';
     
     public $fillable = [
         'nombre', 'descripcion'
