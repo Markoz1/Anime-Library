@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\Estado;
 use App\Models\Version;
 use Illuminate\Database\Eloquent\Model;
 
@@ -16,5 +17,9 @@ class Anime extends Model
     public function version()
     {
         return $this->belongsTo(Version::class);
+    }
+    public function estado()
+    {
+        return $this->belongsTo(Estado::class);
     }
 }
