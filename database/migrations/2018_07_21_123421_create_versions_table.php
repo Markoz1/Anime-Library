@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateAnimesTable extends Migration
+class CreateVersionsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,10 @@ class CreateAnimesTable extends Migration
      */
     public function up()
     {
-        Schema::create('animes', function (Blueprint $table) {
+        Schema::create('versions', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nombre');
-            $table->text('sinopsis');
-            $table->enum('tipo', ['TV-Serie', 'OVA', 'Pelicula', 'Especial']);
-            $table->year('year');
-            $table->decimal('tamano', 8, 2);//Mb
-            $table->boolean('ordered_chapters')->nullable();
-            $table->enum('estado', ['1', '2', '3', '4'])->nullable();
+            $table->string('descripcion');
             $table->timestamps();
         });
     }
@@ -33,6 +28,6 @@ class CreateAnimesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('animes');
+        Schema::dropIfExists('versions');
     }
 }

@@ -18,7 +18,8 @@ class AnimesTableSeeder extends Seeder
             'tipo' => 'TV-Serie',
             'year' => '2009',
             'tamano' => 16514.16,
-            'ordered_chapters' => 1
+            'ordered_chapters' => 1,
+            'version_id' => 1
         ]);
     }
 }
