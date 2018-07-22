@@ -34,7 +34,7 @@ class AnimesTableSeeder extends Seeder
             'tamano' => 16514.16,
             'ordered_chapters' => 1,
             'version_id' => 1,
-            'temporada_id' => 1,            
+            'temporada_id' => 174,            
         ])
         ->fansubs()->attach([2,3]);
     }

@@ -14,12 +14,16 @@ class TemporadasTableSeeder extends Seeder
      */
     public function run()
     {
-        $estacion = Estacion::find(2);
-        $year = Year::find(44);
-        Temporada::create([
-            'nombre' => $estacion->nombre.' '.$year->nombre,
-            'estacion_id' => 2,
-            'year_id' => 44
-        ]);
+        $years = Year::all();
+        $estaciones = Estacion::all();
+        foreach ($years as $year) {
+            foreach ($estaciones as $estacion) {
+                Temporada::create([
+                    'nombre' => $estacion->nombre.' '.$year->nombre,
+                    'estacion_id' => $estacion->id,
+                    'year_id' => $year->id,
+                ]);
+            }
+        }
     }
 }
