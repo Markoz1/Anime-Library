@@ -18,6 +18,7 @@ class DatabaseSeeder extends Seeder
         $this->call(EstacionesTableSeeder::class);
         $this->call(YearsTableSeeder::class);
         $this->call(TemporadasTableSeeder::class);
+        $this->call(IdiomasTableSeeder::class);
         $this->call(AnimesTableSeeder::class);
     }
 }

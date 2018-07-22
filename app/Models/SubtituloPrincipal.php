@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Models\Anime;
+use App\Models\Idioma;
 use Illuminate\Database\Eloquent\Model;
 
 class SubtituloPrincipal extends Model
@@ -16,5 +17,9 @@ class SubtituloPrincipal extends Model
     public function anime()
     {
         return $this->hasOne(Anime::class);
+    }
+    public function idioma()
+    {
+        return $this->belongsTo(Idioma::class);
     }
 }

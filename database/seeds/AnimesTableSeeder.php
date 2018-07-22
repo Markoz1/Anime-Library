@@ -25,6 +25,7 @@ class AnimesTableSeeder extends Seeder
             'version_id' => 1,
             'subtitulo_principal_id' => SubtituloPrincipal::create([
                 'tipo' => 1,
+                'idioma_id' => 2
             ])->id            
         ])
         ->fansubs()->attach(1);
@@ -38,7 +39,11 @@ class AnimesTableSeeder extends Seeder
             'tamano' => 16514.16,
             'ordered_chapters' => 1,
             'version_id' => 1,
-            'temporada_id' => 174,            
+            'temporada_id' => 174,
+            'subtitulo_principal_id' => SubtituloPrincipal::create([
+                'tipo' => 1,
+                'idioma_id' => 3
+            ])->id            
         ])
         ->fansubs()->attach([2,3]);
     }
