@@ -7,6 +7,7 @@ use App\Models\Fansub;
 use App\Models\Genero;
 use App\Models\Version;
 use App\Models\Temporada;
+use App\Models\SubtituloPrincipal;
 use Illuminate\Database\Eloquent\Model;
 
 class Anime extends Model
@@ -36,5 +37,9 @@ class Anime extends Model
     public function temporada()
     {
         return $this->belongsTo(Temporada::class);
+    }
+    public function subtituloPrincipal()
+    {
+        return $this->belongsTo(SubtituloPrincipal::class);
     }
 }
