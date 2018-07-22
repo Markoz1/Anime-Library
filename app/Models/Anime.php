@@ -4,6 +4,7 @@ namespace App\Models;
 
 use App\Models\Estado;
 use App\Models\Fansub;
+use App\Models\Genero;
 use App\Models\Version;
 use Illuminate\Database\Eloquent\Model;
 
@@ -26,5 +27,9 @@ class Anime extends Model
     public function fansubs()
     {
         return $this->belongsToMany(Fansub::class);
+    }
+    public function generos()
+    {
+        return $this->belongsToMany(Genero::class);
     }
 }
