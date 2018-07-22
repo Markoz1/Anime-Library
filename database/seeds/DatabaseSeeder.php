@@ -15,6 +15,9 @@ class DatabaseSeeder extends Seeder
         $this->call(VersionesTableSeeder::class);
         $this->call(FansubsTableSeeder::class);
         $this->call(GenerosTableSeeder::class);
+        $this->call(EstacionesTableSeeder::class);
+        $this->call(YearsTableSeeder::class);
+        $this->call(TemporadasTableSeeder::class);
         $this->call(AnimesTableSeeder::class);
     }
 }

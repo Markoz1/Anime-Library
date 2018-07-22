@@ -6,6 +6,7 @@ use App\Models\Estado;
 use App\Models\Fansub;
 use App\Models\Genero;
 use App\Models\Version;
+use App\Models\Temporada;
 use Illuminate\Database\Eloquent\Model;
 
 class Anime extends Model
@@ -31,5 +32,9 @@ class Anime extends Model
     public function generos()
     {
         return $this->belongsToMany(Genero::class);
+    }
+    public function temporada()
+    {
+        return $this->belongsTo(Temporada::class);
     }
 }
