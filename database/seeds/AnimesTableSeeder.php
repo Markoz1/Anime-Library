@@ -1,6 +1,10 @@
 <?php
 
 use App\Models\Anime;
+use App\Models\Audio;
+use App\Models\Canal;
+use App\Models\Idioma;
+use App\Models\Formato;
 use Illuminate\Database\Seeder;
 use App\Models\SubtituloPrincipal;
 
@@ -29,6 +33,13 @@ class AnimesTableSeeder extends Seeder
             ])->id            
         ])
         ->fansubs()->attach(1);
+        Audio::create([
+            'nombre' => Idioma::find(1)->nombre.' '.Formato::find(4)->nombre.' '.Canal::find(2)->nombre,
+            'anime_id' => 1,
+            'idioma_id' => 1,
+            'formato_id' => 4,
+            'canal_id' => 2
+        ]);
         Anime::create([
             'nombre' => 'Hentai Ouji to Warawanai Neko',
             'sinopsis' => 'Youto Yokodera es un estudiante de instituto que está más salido que el pico de una mesa, pero cada vez que demuestra lo pervertido que es, sus acciones son malinterpretadas y parecen actos de lo más puros. Sin embargo, Youto está harto de tener esta buena prensa y quiere que lo consideren el marrano que es. Un buen día se entera de que hay una estatua de un gato al cual si se le hace una ofrenda, tus deseos se cumplirán, así que Youto le ofrece uno de sus objetos más preciados: una dakimakura. Mientras pide su deseo, se encuentra con una chica en el mismo lugar, Tsukiko Tsutsukakushi, la cual viene a pedir a la estatua que quiere dejar de sentirse obligada a expresar sus sentimientos en cada ocasión, porque cree que eso la hace parece más infantil. Y así, los dos comienzan su nueva vida tras haber pedido sus deseos.',
@@ -46,5 +57,12 @@ class AnimesTableSeeder extends Seeder
             ])->id            
         ])
         ->fansubs()->attach([2,3]);
+        Audio::create([
+            'nombre' => Idioma::find(1)->nombre.' '.Formato::find(2)->nombre.' '.Canal::find(1)->nombre,
+            'anime_id' => 2,
+            'idioma_id' => 1,
+            'formato_id' => 2,
+            'canal_id' => 1
+        ]);
     }
 }
