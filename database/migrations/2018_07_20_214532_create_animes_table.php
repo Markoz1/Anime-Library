@@ -17,7 +17,6 @@ class CreateAnimesTable extends Migration
             $table->increments('id');
             $table->string('nombre');
             $table->text('sinopsis');
-            $table->enum('tipo', ['TV-Serie', 'OVA', 'Pelicula', 'Especial']);
             $table->integer('episodios');
             $table->date('fecha_ini');
             $table->date('fecha_fin');

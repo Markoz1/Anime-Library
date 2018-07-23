@@ -19,6 +19,7 @@ class DatabaseSeeder extends Seeder
         $this->call(YearsTableSeeder::class);
         $this->call(TemporadasTableSeeder::class);
         $this->call(IdiomasTableSeeder::class);
+        $this->call(TiposTableSeeder::class);
         $this->call(AnimesTableSeeder::class);
     }
 }
