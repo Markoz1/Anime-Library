@@ -4,6 +4,7 @@ namespace App\Models;
 
 use App\Models\Tipo;
 use App\Models\Audio;
+use App\Models\Video;
 use App\Models\Estado;
 use App\Models\Fansub;
 use App\Models\Genero;
@@ -51,5 +52,9 @@ class Anime extends Model
     public function audios()
     {
         return $this->hasMany(Audio::class);
+    }
+    public function video()
+    {
+        return $this->belongsTo(Video::class);
     }
 }
