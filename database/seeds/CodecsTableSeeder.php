@@ -21,19 +21,19 @@ class CodecsTableSeeder extends Seeder
             'profundidad_color' => '8 bits'
         ]);
         Codec::create([
-            'nombre' => 'H264',
+            'nombre' => 'H.264',
             'profundidad_color' => '8 bits'
         ]);
         Codec::create([
-            'nombre' => 'H264',
+            'nombre' => 'H.264',
             'profundidad_color' => '10 bits'
         ]);
         Codec::create([
-            'nombre' => 'H265',
+            'nombre' => 'H.265',
             'profundidad_color' => '8 bits'
         ]);
         Codec::create([
-            'nombre' => 'H265',
+            'nombre' => 'H.265',
             'profundidad_color' => '10 bits'
         ]);
     }

@@ -18,6 +18,7 @@ class CreateAnimesTable extends Migration
             $table->string('nombre');
             $table->text('sinopsis');
             $table->integer('episodios');
+            $table->integer('duracion_ep');
             $table->date('fecha_ini');
             $table->date('fecha_fin');
             $table->decimal('tamano', 8, 2);//Mb
