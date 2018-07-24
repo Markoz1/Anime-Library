@@ -49,12 +49,18 @@ class Anime extends Model
     {
         return $this->belongsTo(Tipo::class);
     }
+    /**
+     * Audios disponibles para un anime, para todos los episodios
+     */
     public function audios()
     {
         return $this->hasMany(Audio::class);
     }
-    public function video()
+    /**
+     * Videos disponibles para un anime, para un rango de episodios
+     */
+    public function videos()
     {
-        return $this->belongsTo(Video::class);
+        return $this->hasMany(Audio::class);
     }
 }
