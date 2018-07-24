@@ -6,6 +6,7 @@ use App\Models\Anime;
 use App\Models\Codec;
 use App\Models\Fuente;
 use App\Models\Contenedor;
+use App\Models\Resolucion;
 use Illuminate\Database\Eloquent\Model;
 
 class Video extends Model
@@ -31,5 +32,9 @@ class Video extends Model
     public function fuente()
     {
         return $this->belongsTo(Fuente::class);
+    }
+    public function resolucion()
+    {
+        return $this->belongsTo(Resolucion::class);
     }
 }

@@ -3,8 +3,11 @@
 use App\Models\Anime;
 use App\Models\Audio;
 use App\Models\Canal;
+use App\Models\Codec;
+use App\Models\Video;
 use App\Models\Idioma;
 use App\Models\Formato;
+use App\Models\Contenedor;
 use Illuminate\Database\Seeder;
 use App\Models\SubtituloPrincipal;
 
@@ -40,6 +43,16 @@ class AnimesTableSeeder extends Seeder
             'idioma_id' => 1,
             'formato_id' => 4,
             'canal_id' => 2
+        ]);
+        Video::create([
+            'nombre' => Contenedor::find(3)->nombre.' '.Codec::find(3)->nombre,
+            'episodio_ini' => 1,
+            'episodio_fin' => 13,
+            'anime_id' => 1,
+            'codec_id' => 3,
+            'contenedor_id' => 3,
+            'fuente_id' => 4,
+            'resolucion_id' => 3
         ]);
         Anime::create([
             'nombre' => 'Hentai Ouji to Warawanai Neko',
