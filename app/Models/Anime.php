@@ -8,6 +8,7 @@ use App\Models\Video;
 use App\Models\Estado;
 use App\Models\Fansub;
 use App\Models\Genero;
+use App\Models\Estudio;
 use App\Models\Version;
 use App\Models\Temporada;
 use App\Models\SubtituloPrincipal;
@@ -48,6 +49,10 @@ class Anime extends Model
     public function tipo()
     {
         return $this->belongsTo(Tipo::class);
+    }
+    public function estudio()
+    {
+        return $this->belongsTo(Estudio::class);
     }
     /**
      * Audios disponibles para un anime, para todos los episodios
