@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Models\Anime;
+use App\Models\Codec;
 use Illuminate\Database\Eloquent\Model;
 
 class Video extends Model
@@ -16,5 +17,9 @@ class Video extends Model
     public function anime()
     {
         return $this->belongsTo(Anime::class);
+    }
+    public function codec()
+    {
+        return $this->belongsTo(Codec::class);
     }
 }

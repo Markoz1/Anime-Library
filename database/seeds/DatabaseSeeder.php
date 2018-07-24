@@ -22,6 +22,7 @@ class DatabaseSeeder extends Seeder
         $this->call(TiposTableSeeder::class);
         $this->call(FormatosTableSeeder::class);
         $this->call(CanalesTableSeeder::class);
+        $this->call(CodecsTableSeeder::class);
         $this->call(AnimesTableSeeder::class);
     }
 }
