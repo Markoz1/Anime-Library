@@ -15,6 +15,6 @@ class Estudio extends Model
 
     public function animes()
     {
-        return $this->hasMany(Anime::class);
+        return $this->belongsToMany(Anime::class);
     }
 }

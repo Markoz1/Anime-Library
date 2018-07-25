@@ -71,7 +71,8 @@ class AnimesTableSeeder extends Seeder
                 'idioma_id' => 3
             ])->id            
         ])
-        ->fansubs()->attach([2,3]);
+        // ->fansubs()->attach([2,3])
+        ->estudios()->attach(527);
         Audio::create([
             'nombre' => Idioma::find(1)->nombre.' '.Formato::find(2)->nombre.' '.Canal::find(1)->nombre,
             'anime_id' => 2,

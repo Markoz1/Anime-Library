@@ -50,9 +50,9 @@ class Anime extends Model
     {
         return $this->belongsTo(Tipo::class);
     }
-    public function estudio()
+    public function estudios()
     {
-        return $this->belongsTo(Estudio::class);
+        return $this->belongsToMany(Estudio::class);
     }
     /**
      * Audios disponibles para un anime, para todos los episodios
