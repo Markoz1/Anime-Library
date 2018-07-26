@@ -15,8 +15,8 @@ class CreateIdiomasTable extends Migration
     {
         Schema::create('idiomas', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('nombre',15);
-            $table->string('abreviacion',5);
+            $table->string('nombre',15)->unique();
+            $table->string('abreviacion',5)->unique();
             $table->timestamps();
         });
     }

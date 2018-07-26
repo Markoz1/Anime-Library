@@ -15,7 +15,7 @@ class CreateFormatosTable extends Migration
     {
         Schema::create('formatos', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('nombre');
+            $table->string('nombre')->unique();
             $table->timestamps();
         });
     }
