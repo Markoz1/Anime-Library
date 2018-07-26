@@ -68,4 +68,16 @@ class Anime extends Model
     {
         return $this->hasMany(Audio::class);
     }
+    public function padres()
+    {
+        return $this->belongsToMany(Anime::class, 'padre_hijo', 'hijo_id', 'padre_id')
+        ->withPivot('tipo_relacion')
+        ->withTimestamps();
+    }
+    public function hijos()
+    {
+        return $this->belongsToMany(Anime::class, 'padre_hijo', 'padre_id', 'hijo_id')
+        ->withPivot('tipo_relacion')
+        ->withTimestamps();
+    }
 }

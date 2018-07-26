@@ -71,8 +71,8 @@ class AnimesTableSeeder extends Seeder
                 'idioma_id' => 3
             ])->id            
         ])
-        // ->fansubs()->attach([2,3])
-        ->estudios()->attach(527);
+        ->fansubs()->attach([2,3]);
+        //->estudios()->attach(527);
         Audio::create([
             'nombre' => Idioma::find(1)->nombre.' '.Formato::find(2)->nombre.' '.Canal::find(1)->nombre,
             'anime_id' => 2,
@@ -80,5 +80,7 @@ class AnimesTableSeeder extends Seeder
             'formato_id' => 2,
             'canal_id' => 1
         ]);
+        Anime::find(1)->hijos()->attach(2, ['tipo_relacion' => 'secuela']);
+        Anime::find(2)->hijos()->attach(1, ['tipo_relacion' => 'precuela']);
     }
 }
