@@ -10,7 +10,7 @@ class Idioma extends Model
 {
     protected $table = 'idiomas';
     
-    public $fillable = [
+    protected $fillable = [
         'nombre', 'abreviacion'
     ];
 

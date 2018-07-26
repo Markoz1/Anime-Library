@@ -9,7 +9,7 @@ class Genero extends Model
 {
     protected $table = 'generos';
     
-    public $fillable = [
+    protected $fillable = [
         'nombre', 'es_anime'
     ];
 

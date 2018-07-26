@@ -9,7 +9,7 @@ class Estudio extends Model
 {
     protected $table = 'estudios';
     
-    public $fillable = [
+    protected $fillable = [
         'nombre'
     ];
 

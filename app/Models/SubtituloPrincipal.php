@@ -10,8 +10,8 @@ class SubtituloPrincipal extends Model
 {
     protected $table = 'subtitulos_principales';
 
-    public $fillable = [
-        'tipo', 'notas_version'
+    protected $fillable = [
+        'tipo', 'notas_version', 'idioma_id'
     ];
 
     public function anime()

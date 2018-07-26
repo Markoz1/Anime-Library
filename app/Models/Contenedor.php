@@ -9,7 +9,7 @@ class Contenedor extends Model
 {
     protected $table = 'contenedores';
     
-    public $fillable = [
+    protected $fillable = [
         'nombre'
     ];
 

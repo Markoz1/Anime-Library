@@ -9,7 +9,7 @@ class Codec extends Model
 {
     protected $table = 'codecs';
     
-    public $fillable = [
+    protected $fillable = [
         'nombre', 'profundidad_color'
     ];
 

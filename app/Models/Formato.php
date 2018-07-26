@@ -9,7 +9,7 @@ class Formato extends Model
 {
     protected $table = 'formatos';
     
-    public $fillable = [
+    protected $fillable = [
         'nombre'
     ];
 

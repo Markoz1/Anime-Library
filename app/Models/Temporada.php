@@ -10,8 +10,8 @@ class Temporada extends Model
 {
     protected $table = 'temporadas';
 
-    public $fillable = [
-        'nombre'
+    protected $fillable = [
+        'nombre', 'estacion_id', 'year_id'
     ];
 
     public function animes()

@@ -9,7 +9,7 @@ class Estacion extends Model
 {
     protected $table = 'estaciones';
 
-    public $fillable = [
+    protected $fillable = [
         'nombre'
     ];
 

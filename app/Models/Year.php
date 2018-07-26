@@ -9,7 +9,7 @@ class Year extends Model
 {
     protected $table = 'years';
 
-    public $fillable = [
+    protected $fillable = [
         'nombre'
     ];
 

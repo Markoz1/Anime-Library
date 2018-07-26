@@ -9,7 +9,7 @@ class Fuente extends Model
 {
     protected $table = 'fuentes';
     
-    public $fillable = [
+    protected $fillable = [
         'nombre'
     ];
 

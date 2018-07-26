@@ -9,8 +9,8 @@ class Resolucion extends Model
 {
     protected $table = 'resoluciones';
     
-    public $fillable = [
-        'nombre', 'horizontal', 'vertical'
+    protected $fillable = [
+        'nombre', 'horizontal', 'vertical', 'cantidad_pixeles'
     ];
 
     public function videos()

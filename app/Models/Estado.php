@@ -9,8 +9,8 @@ class Estado extends Model
 {
     protected $table = 'estados';
     
-    public $fillable = [
-        'nombre', 'descripcion'
+    protected $fillable = [
+        'nombre', 'descripcion', 'color'
     ];
 
     public function animes()

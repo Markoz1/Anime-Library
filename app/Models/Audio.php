@@ -12,8 +12,8 @@ class Audio extends Model
 {
     protected $table = 'audios';
     
-    public $fillable = [
-        'nombre'
+    protected $fillable = [
+        'nombre', 'anime_id', 'idioma_id', 'formato_id', 'canal_id'
     ];
 
     public function anime()

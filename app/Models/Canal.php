@@ -9,7 +9,7 @@ class Canal extends Model
 {
     protected $table = 'canales';
     
-    public $fillable = [
+    protected $fillable = [
         'nombre'
     ];
 

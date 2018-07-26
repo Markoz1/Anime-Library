@@ -13,8 +13,8 @@ class Video extends Model
 {
     protected $table = 'videos';
 
-    public $fillable = [
-        'nombre'
+    protected $fillable = [
+        'nombre', 'episodio_ini', 'episodio_fin', 'anime_id', 'codec_id', 'contenedor_id', 'fuente_id', 'resolucion_id'
     ];
 
     public function anime()

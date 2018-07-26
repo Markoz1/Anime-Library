@@ -9,7 +9,7 @@ class Version extends Model
 {
     protected $table = 'versiones';
     
-    public $fillable = [
+    protected $fillable = [
         'nombre', 'descripcion'
     ];
 

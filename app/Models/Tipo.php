@@ -9,7 +9,7 @@ class Tipo extends Model
 {
     protected $table = 'tipos';
     
-    public $fillable = [
+    protected $fillable = [
         'nombre'
     ];
 

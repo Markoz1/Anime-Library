@@ -9,7 +9,7 @@ class Fansub extends Model
 {
     protected $table = 'fansubs';
     
-    public $fillable = [
+    protected $fillable = [
         'nombre', 'abreviacion'
     ];
 
