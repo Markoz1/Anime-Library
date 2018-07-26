@@ -11,6 +11,7 @@ use App\Models\Genero;
 use App\Models\Estudio;
 use App\Models\Version;
 use App\Models\Temporada;
+use App\Models\FuenteAnime;
 use App\Models\SubtituloPrincipal;
 use Illuminate\Database\Eloquent\Model;
 
@@ -80,5 +81,9 @@ class Anime extends Model
         return $this->belongsToMany(Anime::class, 'padre_hijo', 'padre_id', 'hijo_id')
         ->withPivot('tipo_relacion')
         ->withTimestamps();
+    }
+    public function fuenteAnime()
+    {
+        return $this->belongsTo(FuenteAnime::class);
     }
 }
