@@ -15,7 +15,8 @@ class CreateAnimesTable extends Migration
     {
         Schema::create('animes', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('nombre')->unique();
+            $table->string('titulo')->unique();
+            $table->string('imagen')->unique();
             $table->text('sinopsis');
             $table->integer('episodios');
             $table->integer('duracion_ep');

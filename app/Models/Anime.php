@@ -20,7 +20,7 @@ class Anime extends Model
     protected $table = 'animes';
     
     protected $fillable = [
-        'nombre', 'sinopsis', 'episodios', 'duracion_ep', 'fecha_ini', 'fecha_fin', 'year', 'tamano', 
+        'titulo', 'imagen', 'sinopsis', 'episodios', 'duracion_ep', 'fecha_ini', 'fecha_fin', 'year', 'tamano', 
         'ordered_chapters', 'tipo_id', 'version_id', 'estado_id', 'temporada_id', 'subtitulo_principal_id'
     ];
 
