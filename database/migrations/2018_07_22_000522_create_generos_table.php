@@ -16,7 +16,7 @@ class CreateGenerosTable extends Migration
         Schema::create('generos', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nombre')->unique();
-            $table->boolean('es_anime')->nullable();
+            $table->enum('tipo', ['Normal', 'Ambientación','Temático']);
             $table->timestamps();
         });
     }
