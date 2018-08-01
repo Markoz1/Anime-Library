@@ -9,6 +9,7 @@ use App\Models\Estado;
 use App\Models\Fansub;
 use App\Models\Genero;
 use App\Models\Estudio;
+use App\Models\Publico;
 use App\Models\Version;
 use App\Models\Temporada;
 use App\Models\FuenteAnime;
@@ -85,5 +86,9 @@ class Anime extends Model
     public function fuenteAnime()
     {
         return $this->belongsTo(FuenteAnime::class);
+    }
+    public function publico()
+    {
+        return $this->belongsTo(Publico::class);
     }
 }
