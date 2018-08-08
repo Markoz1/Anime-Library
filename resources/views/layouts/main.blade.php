@@ -7,8 +7,9 @@
         {{-- ModularAdmin css --}}
         <link rel="stylesheet" href="{{ asset('modular-admin/css/vendor.css') }}">
         {{-- Theme --}}
-        <link rel="stylesheet" href="{{ asset('modular-admin/css/app-orange.css') }}">
-        <link rel="stylesheet" href="{{ asset('css/style-main.css') }}">
+        <link rel="stylesheet" href="{{ asset('modular-admin/css/app-purple.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/media-custom.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
         <title>Library</title>
     </head>
     <body>
@@ -33,7 +34,10 @@
         {{-- <script src="{{ asset('js/app.js') }}"></script> --}}
         {{-- ModularAdmin js --}}
         <script src="{{ asset('modular-admin/js/vendor.js') }}"></script>
-        <script src="{{ asset('modular-admin/js/app.js') }}"></script>
+        <script src="{{ asset('modular-admin/js/app.js') }}"></script>     
         @yield('script')
+        <script>
+            $(function () { $('[data-toggle="tooltip"]').tooltip() })
+        </script>
     </body>
 </html>

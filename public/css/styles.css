@@ -1,0 +1,346 @@
+a:not(.btn) {
+    text-decoration: none;
+}
+/* a:not(.btn):hover {
+    text-decoration: none;
+} */
+.tooltip-inner {
+  background-color: #343a40;
+  border-radius: 0.25rem;
+  font-size: 0.85rem;
+}
+.fuente-anime {
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 25%;
+    width: 38px;
+    margin-bottom: 3px;
+}
+.item-list .item-col.item-col-fuente {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.fuente-info-sm {
+    display: none;
+}
+.audio-info {
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 16.67px;
+    width: 25px;
+    border: 1px solid rgba(0,0,0, 0.25);
+    margin: 2px 2px;
+}
+.item-col-audio {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.content-audio-info {
+    display: flex;
+    width: 100;
+    justify-content: center;
+}
+.item-col-audio.max {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+}
+.content-audio-info-main-sm {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.item-list .item-col {
+    padding: 5px 10px 5px 0;
+}
+.items-list-page .item-list .item-col.item-col-img {
+    -ms-flex-preferred-size: 75px;
+        flex-basis: 75px;
+}
+.item-list .item-col.item-col-img a {
+    width: 100%;
+    height: 100%; 
+}
+.item-list .item-img {
+    width: 100%;
+    height: 100%;
+ }
+.items-list-page .item-list .item-row {
+    font-size: 0.85rem; 
+}
+
+@media (min-width: 576px) {
+    .disp-col {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+}
+@media (min-width: 1249.98px) {
+    .items-list-page .item-list .item-col.item-col-img:not(.item-col-header) {
+        height: 100px;
+        align-self: center; 
+    } 
+    .card .item-list .item .item-row {
+        padding: 0 15px;
+    }
+    .items-list-page .item-list .item-col.item-col-sales {
+        text-align: left;
+        font-weight: 600;
+        max-width: 220px;
+    }
+    .item-col-title{
+        max-width: 450px;
+    }
+    .items-list-page .item-list .item-col.item-col-title .colum-fansub {
+        display: none;
+    }
+    .item-col-fansub {
+        text-align: left;
+        max-width: 220px;
+    }
+    .item-col-tipo {
+        text-align: center;
+        max-width: 90px;
+    }
+    .item-col-episodios {
+        text-align: center;
+        max-width: 55px;
+    }
+    .item-col-fuente {
+        text-align: center;
+        max-width: 90px;
+    }
+    .item-col-resolucion {
+        text-align: center;
+        max-width: 110px;
+    }
+    .item-col.item-col-video {
+        text-align: center;
+        min-width: 210px;
+        max-width: 240px;        
+    }
+    .item-col-audio {
+        text-align: center;
+        max-width: 150px;
+    }
+    .items-list-page .item-list .item-col.item-col-date {
+        max-width: 125px;
+    }        
+}
+@media (min-width: 576px) and (max-width: 1539.98px) {
+    .card .item-list .item .item-row {
+        padding: 0 10px;
+    }
+    .item-list .item-list-header .item-col.item-col-header span {
+        font-size: 0.65rem;
+    }
+    .items-list-page .item-list .item-row {
+        font-size: 0.68rem; 
+    }
+    .item-col-tipo {
+        max-width: 65px;
+    }
+    .item-col-episodios {
+        max-width: 50px;
+    }
+    .item-col-fuente {
+        max-width: 55px;
+    }
+    .item-col-resolucion {
+        max-width: 75px;
+    }
+    .item-col.item-col-video {
+        min-width: 200px;       
+    }
+    .item-col-audio {
+        min-width: 81px;
+    }
+    .items-list-page .item-list .item-col.item-col-date {
+        max-width: 65px;
+    }        
+}
+@media (min-width: 1400px)  { 
+    .video-info-sm {
+        display: none;
+    }        
+} 
+@media (min-width: 1250px) and (max-width: 1399.98px) {
+    .video-info {
+        display: none;
+    }
+    .item-col.item-col-video {
+        min-width: 140px;       
+    }
+    /* .audio-info {
+        background-position: center;
+        background-repeat: no-repeat;
+        height: 16.67px;
+        width: 25px;
+        border: 1px solid rgba(0,0,0, 0.25);
+        margin: 2px 2px;
+    }
+    .item-col-audio {
+        display: flex;
+        flex-wrap: wrap;
+        align-content: center;
+    }          */
+}
+@media (min-width: 576px) and (max-width: 1249.98px) {
+    .items-list-page .item-list .item-col.item-col-tipo, .items-list-page .item-list .item-col.item-col-episodios, 
+    .items-list-page .item-list .item-col.item-col-fuente, .items-list-page .item-list .item-col.item-col-resolucion, 
+    .items-list-page .item-list .item-col.item-col-video, .items-list-page .item-list .item-col.item-col-audio,
+    .items-list-page .item-list .item-col.item-col-date {
+        padding-top: 25px;
+        position: relative; }
+    .items-list-page .item-list .item-heading {
+        font-size: 0.68rem;
+        line-height: 30px;
+    }
+    .items-list-page .item-list .item-heading.episodios, .items-list-page .item-list .item-heading.temporada {
+        display: none;
+    }
+    .items-list-page .item-list .item-col.item-col-title .colum-title {
+        max-width: 75%;
+        font-size: 0.7rem;
+    }
+    .items-list-page .item-list .item-col.item-col-title .colum-fansub {
+        text-align: right;
+        max-width: 25%;
+    }
+    .items-list-page .item-list .item-col.item-col-title .colum-fansub a {
+        display: inline;
+        padding-left: 3px;
+    }  
+    .items-list-page .item-list .item-col.item-col-img {
+        -ms-flex-preferred-size: 80px;
+        flex-basis: 80px;
+        padding: 4px 5px}
+    .items-list-page .item-list .item-col.item-col-img:not(.item-col-header) {
+        height: 107px;
+        align-self: center; 
+    }
+    .items-list-page .item-list .item-col.item-col-fansub {
+        display: none; }
+    .items-list-page .item-list .item-col.item-col-tipo {
+        text-align: center;
+        max-width: 65px; }
+    .items-list-page .item-list .item-col.item-col-episodios {
+        text-align: center; 
+        max-width: 35px; }
+    .items-list-page .item-list .item-col.item-col-fuente {
+        text-align: center;
+        max-width: 80px; }
+    .items-list-page .item-list .item-col.item-col-resolucion {
+        /* min-width: 69px; */
+        text-align: center; }
+    .items-list-page .item-list .item-col.item-col-video {
+        text-align: center; }
+    .items-list-page .item-list .item-col.item-col-audio {
+        text-align: center;
+        min-width: 78; }
+    .items-list-page .item-list .item-col.item-col-date {
+        white-space: normal;
+        max-width: 90px; }
+    .video-info-sm {
+        display: none;
+    } 
+}
+@media (min-width: 576px) and (max-width: 709.98px) {
+    .video-info-sm {
+        display: block;
+    }
+    .video-info {
+        display: none;
+    }
+    .item-col.item-col-video {
+        min-width: 140px;       
+    }  
+}
+@media (min-width: 650px) {
+    .temporada-info-sm {
+        display: none;
+    }
+} 
+@media (min-width: 576px) and (max-width: 649.98px) {
+    .items-list-page .item-list .item-col.item-col-tipo {
+        max-width: 57px; 
+    }
+    .items-list-page .item-list .item-col.item-col-resolucion {
+        font-size: 0.68rem;
+    }
+    .items-list-page .item-list .item-col.item-col-audio {
+        font-size: 0.65rem;
+    }
+    .temporada-info {
+        display: none;
+    }
+    .items-list-page .item-list .item-col.item-col-date {
+        max-width: 60px;
+    }
+}
+@media (max-width: 575.98px) {
+    .items-list-page .item-list .item-col.item-col-title .colum-fansub {
+        display: none;
+    }
+    /* .item-list .item-heading {
+        width: 40%;
+    } */
+    .items-list-page .item-list .item-heading.episodios-sm, .items-list-page .item-list .item-heading.temporada-sm, .temporada-info-sm {
+        display: none;
+    }
+    .items-list-page .item-list .item .item-col {
+        text-align: left; 
+    }
+    .item-list .item-col.item-col-img {
+        height: 300px;
+        justify-content: center;
+    }
+    .item-list .item-col.item-col-img a {
+        width: 210px;
+        height: 100%;
+    }
+    .fuente-anime {
+        display: none;
+    }
+    .fuente-anime-sm {
+        background-size: 100%;
+        background-position: center;
+        background-repeat: no-repeat;
+        height: 22px;
+        width: 45px;
+        margin-bottom: 3px;
+    }
+    .item-list .item-col.item-col-fuente, .item-list .item-col.item-col-audio {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        flex-wrap: nowrap;
+    }
+    .fuente-info-sm {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    .content-audio-info-main {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: left;
+    }
+    .content-audio-info-main-sm {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: left;
+    }
+    .formato-canal {
+        margin-right: 2px
+    }
+    .video-info-sm {
+        display: none;
+    }
+}
