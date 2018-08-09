@@ -14,47 +14,47 @@ class IdiomasTableSeeder extends Seeder
     {
         Idioma::create([
             'nombre' => 'Japonés',
-            'abreviacion' => 'jpn'
+            'imagen' => asset('public/files/idiomas/jpn.png')
         ]);
         Idioma::create([
             'nombre' => 'Castellano',
-            'abreviacion' => 'spa'
+            'imagen' => asset('public/files/idiomas/spa.png')
         ]);
         Idioma::create([
             'nombre' => 'Latino',
-            'abreviacion' => 'lat'
+            'imagen' => asset('public/files/idiomas/lat.png')
         ]);
         Idioma::create([
             'nombre' => 'Ingles',
-            'abreviacion' => 'eng'
+            'imagen' => asset('public/files/idiomas/eng.png')
         ]);
         Idioma::create([
             'nombre' => 'Francés',
-            'abreviacion' => 'fre'
+            'imagen' => asset('public/files/idiomas/fre.png')
         ]);
         Idioma::create([
             'nombre' => 'Italiano',
-            'abreviacion' => 'ita'
+            'imagen' => asset('public/files/idiomas/ita.png')
         ]);
         Idioma::create([
             'nombre' => 'Portugués',
-            'abreviacion' => 'por'
+            'imagen' => asset('public/files/idiomas/por.png')
         ]);
         Idioma::create([
             'nombre' => 'Coreano',
-            'abreviacion' => 'kor'
+            'imagen' => asset('public/files/idiomas/kor.png')
         ]);
         Idioma::create([
             'nombre' => 'Chino',
-            'abreviacion' => 'chi'
+            'imagen' => asset('public/files/idiomas/chi.png')
         ]);
         Idioma::create([
             'nombre' => 'Ruso',
-            'abreviacion' => 'rus'
+            'imagen' => asset('public/files/idiomas/rus.png')
         ]);
         Idioma::create([
             'nombre' => 'Alemán',
-            'abreviacion' => 'ger'
+            'imagen' => asset('public/files/idiomas/ger.png')
         ]);
     }
 }

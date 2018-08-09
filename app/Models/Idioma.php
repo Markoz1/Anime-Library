@@ -11,7 +11,7 @@ class Idioma extends Model
     protected $table = 'idiomas';
     
     protected $fillable = [
-        'nombre', 'abreviacion'
+        'nombre', 'imagen'
     ];
 
     public function subtitulosPrincipales()

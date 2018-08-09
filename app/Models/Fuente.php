@@ -10,7 +10,7 @@ class Fuente extends Model
     protected $table = 'fuentes';
     
     protected $fillable = [
-        'nombre'
+        'nombre', 'imagen'
     ];
 
     public function videos()
