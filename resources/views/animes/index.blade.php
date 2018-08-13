@@ -234,6 +234,160 @@
                         </div>
                     </div>
                 </li>
+                @foreach ($animes as $anime)
+                <li class="item">
+                    <div class="item-row">
+                        <div class="item-col fixed item-col-check">
+                            <div>{{ $loop->iteration }}</div>
+                        </div>
+                        <div class="item-col fixed item-col-img py-1">
+                            <a href="#">
+                                <div class="item-img rounded" style="background-image: url(https://res.cloudinary.com/dua4oyonw/image/upload/v1532831734/isekai-no-seikishi-monogatari.101025.jpg)"></div>
+                            </a>
+                        </div>
+                        <div class="item-col fixed pull-left item-col-title">
+                            <div class="item-heading">Título</div>
+                            <div class="colum-title">
+                                <a href="#">
+                                    <h4 class="item-title">
+                                        {{ $anime->titulo }}
+                                    </h4>
+                                </a>
+                            </div>
+                            <div class="colum-fansub">
+                                @foreach ($anime->fansubs as $fansub)
+                                    @if (!$loop->last)
+                                        <a href="#">{{ $fansub->nombre }}</a>,
+                                    @else
+                                        <a href="#">{{ $fansub->nombre }}</a>
+                                    @endif  
+                                @endforeach
+                            </div>
+                        </div>
+                        <div class="item-col item-col-fansub">
+                            <div class="item-heading">Fansub</div>
+                            <div>
+                                @foreach ($anime->fansubs as $fansub)
+                                    @if (!$loop->last)
+                                        <a href="#">{{ $fansub->nombre }}</a>,
+                                    @else
+                                        <a href="#">{{ $fansub->nombre }}</a>
+                                    @endif  
+                                @endforeach
+                            </div>
+                        </div>
+                        <div class="item-col item-col-tipo">
+                            <div class="item-heading">Tipo</div>
+                            <div class="no-overflow">
+                                {{ $anime->tipo->nombre }}
+                            </div>
+                        </div>
+                        <div class="item-col item-col-episodios">
+                            <div class="item-heading episodios">Episodios</div>
+                            <div class="item-heading episodios-sm">Eps.</div>
+                            <div class="no-overflow">
+                                <div data-toggle="tooltip" data-placement="top" title="tamano">{{ $anime->episodios }}</div>
+                            </div>
+                        </div>
+                        <div class="item-col item-col-fuente">
+                            <div class="item-heading">Fuente</div>
+                                @php
+                                    $fuentes = $anime->agruparFuentes();
+                                    
+                                @endphp
+                                @foreach ($fuentes as $fuenteVideo)
+                                    @if ($loop->count>4 && $loop->iteration===4)
+                                        <a href="#">Más información</a>
+                                        @break
+                                    @endif 
+                                    <span class="fuente-anime" data-toggle="tooltip" data-placement="top" title="
+                                    {{ $fuenteVideo->get('nombre') }}
+                                    @foreach ($fuenteVideo->last() as $episodio)
+                                    {{$episodio->get('ini').'-'.$episodio->get('fin')}}
+                                    @endforeach
+                                    " style="background-image: url({{ $fuenteVideo->get('imagen') }})"></span>                               
+                                @endforeach
+                                <div class="fuente-info-sm">
+                                @foreach ($anime->videos as $video)
+                                    @if ($loop->count>4 && $loop->iteration===4)
+                                        <a href="#">Más información</a>
+                                        @break
+                                    @endif 
+                                    <span class="fuente-anime-sm" data-toggle="tooltip" data-placement="top" title="{{ $video->fuente->nombre }}" style="background-image: url({{ $video->fuente->imagen }})"></span>                              
+                                @endforeach
+                            </div>
+                        </div>
+                        <div class="item-col item-col-video">
+                            <div class="item-heading">Video</div>
+                            <div class="no-overflow disp-col">
+                                @foreach ($anime->videos as $video)
+                                    @if ($loop->count>4 && $loop->iteration===4)
+                                        <a href="#">Más información</a>
+                                        @break
+                                    @endif 
+                                    <div class="video-info" data-toggle="tooltip" data-placement="top" title="Ep. {{ $video->episodio_ini.'-'.$video->episodio_fin }}">{{ $video->nombre }} <small>(Softsubs)</small></div>
+                                    <div class="video-info-sm" data-toggle="tooltip" data-placement="top" title="Ep. 01-26 (Softsubs)">{{ $video->nombre }}</div>
+                                @endforeach
+                            </div>
+                        </div>
+                        @if (count($anime->audios) <= 4)
+                        <div class="item-col item-col-audio">
+                            <div class="item-heading">Audio</div>
+                            <div class="content-audio-info-main">
+                                @foreach ($anime->audios as $audio)
+                                    <div class="content-audio-info">
+                                        <span class="audio-info" data-toggle="tooltip" data-placement="top" title="{{ $audio->idioma->nombre }}" style="background-image: url({{ $audio->idioma->imagen }})"></span>
+                                        <span class="formato-canal">{{ $audio->nombre }}</span> 
+                                    </div>
+                                @endforeach
+                            </div>    
+                        </div>   
+                        @else
+                        <div class="item-col item-col-audio max">
+                            <div class="item-heading">Audio</div>
+                            <div class="content-audio-info-main-sm">
+                                @foreach ($anime->audios as $audio)
+                                    <span class="audio-info" data-toggle="tooltip" data-placement="top" title="{{ $audio->idioma->nombre.' '.$audio->nombre }}" style="background-image: url({{ $audio->idioma->imagen }})"></span>
+                                @endforeach
+                            </div>
+                        </div>                            
+                        @endif
+                        <div class="item-col item-col-date">
+                            <div class="item-heading temporada">Temporada</div>
+                            <div class="item-heading temporada-sm">Temp.</div>
+                            {{-- {{ $anime->temporada->nombre }} --}}
+                            <div class="temporada-info">Primavera 2018</div>
+                            <div class="temporada-info-sm">Prim. 2018</div>
+                        </div>
+                        <div class="item-col fixed item-col-actions-dropdown">
+                            <div class="item-actions-dropdown">
+                                <a class="item-actions-toggle-btn">
+                                    <span class="inactive">
+                                        <i class="fa fa-cog"></i>
+                                    </span>
+                                    <span class="active">
+                                        <i class="fa fa-chevron-circle-right"></i>
+                                    </span>
+                                </a>
+                                <div class="item-actions-block">
+                                    <ul class="item-actions-list">
+                                        <li>
+                                            <a class="remove" href="#" data-toggle="modal" data-target="#confirm-modal">
+                                                <i class="fa fa-trash-o "></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="edit" href="item-editor.html">
+                                                <i class="fa fa-pencil"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>    
+                @endforeach                
             </ul>
         </div>
         <nav class="text-right">

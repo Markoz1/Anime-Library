@@ -14,27 +14,27 @@ class FuentesTableSeeder extends Seeder
     {
         Fuente::create([
             'nombre' => 'HDTV',
-            'imagen' => asset('public/files/fuentes/hdtv.png')
+            'imagen' => asset('files/fuentes/hdtv.png')
         ]);
         Fuente::create([
             'nombre' => 'SDTV',
-            'imagen' => asset('public/files/fuentes/sdtv.png')
+            'imagen' => asset('files/fuentes/sdtv.png')
         ]);
         Fuente::create([
             'nombre' => 'WEB',
-            'imagen' => asset('public/files/fuentes/web.png')
+            'imagen' => asset('files/fuentes/web.png')
         ]);
         Fuente::create([
             'nombre' => 'Bluray',
-            'imagen' => asset('public/files/fuentes/bluray.png')
+            'imagen' => asset('files/fuentes/bluray.png')
         ]);
         Fuente::create([
             'nombre' => 'DVD',
-            'imagen' => asset('public/files/fuentes/dvd.png')
+            'imagen' => asset('files/fuentes/dvd.png')
         ]);
         Fuente::create([
             'nombre' => 'VHS',
-            'imagen' => asset('public/files/fuentes/vhs.png')
+            'imagen' => asset('files/fuentes/vhs.png')
         ]);
     }
 }

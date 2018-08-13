@@ -21,5 +21,14 @@ class FansubsTableSeeder extends Seeder
         Fansub::create([
             'nombre' => 'Hoshizora',
         ]);
+        Fansub::create([
+            'nombre' => 'Silviu555',
+        ]);
+        Fansub::create([
+            'nombre' => 'XzDres',
+        ]);
+        Fansub::create([
+            'nombre' => 'Meiji no Fansub',
+        ]);
     }
 }

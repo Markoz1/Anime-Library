@@ -15,6 +15,14 @@ class AnimeController extends Controller
     public function index()
     {
         $animes = Anime::all();
+        // $coleccion = $animes->last()->agruparFuentes();
+        // dd($coleccion);
+        // $coleccion = $animes->last()->crearCollection();
+        // dd($coleccion);
+        // dd($animes->last()->videos->get(0));
+        // dd($animes->last()->agruparFuentes());
+        // dd($animes->last()->videos->groupBy('fuente_id'));
+        // dd($animes->last()->videos->first()->episodios);
         return view('animes.index', compact('animes'));
     }
 

@@ -259,8 +259,11 @@ a:not(.btn) {
         display: none;
     }
     .item-col.item-col-video {
-        min-width: 140px;       
-    }  
+        min-width: 137px;       
+    }
+    .item-col.item-col-audio {
+        min-width: 81px;       
+    }    
 }
 @media (min-width: 650px) {
     .temporada-info-sm {

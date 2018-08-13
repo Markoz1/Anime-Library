@@ -14,7 +14,7 @@ class AddAnimesToVideosTable extends Migration
     public function up()
     {
         Schema::table('videos', function (Blueprint $table) {
-            $table->unsignedInteger('anime_id')->nullable()->after('episodio_fin');
+            $table->unsignedInteger('anime_id')->nullable()->after('nombre');
             $table->foreign('anime_id')->references('id')->on('animes');
         });
     }

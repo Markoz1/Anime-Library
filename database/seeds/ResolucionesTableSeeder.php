@@ -78,5 +78,17 @@ class ResolucionesTableSeeder extends Seeder
             'vertical' => 360,
             'cantidad_pixeles' => 640*360
         ]);
+        Resolucion::create([
+            'nombre' => '640x352',
+            'horizontal' => 640,
+            'vertical' => 352,
+            'cantidad_pixeles' => 640*352
+        ]);
+        Resolucion::create([
+            'nombre' => '716x360',
+            'horizontal' => 716,
+            'vertical' => 360,
+            'cantidad_pixeles' => 716*360
+        ]);
     }
 }
