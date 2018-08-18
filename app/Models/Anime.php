@@ -120,7 +120,7 @@ class Anime extends Model
         }
         return $fuentes;
     }
-    public function agruparEpisodios(Collection $grupo)
+    private function agruparEpisodios(Collection $grupo)
     {
         $grupo = $grupo->values();
         $episodiosAgrupado = new Collection;
@@ -188,7 +188,7 @@ class Anime extends Model
         });
         return $episodiosAgrupado;
     }
-    public function crearCollection()
+    private function crearCollection()
     {
         $coleccion = new Collection;
         $videosAgrupados =  $this->videos->groupBy('fuente_id');

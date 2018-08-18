@@ -26,4 +26,17 @@ class Temporada extends Model
     {
         return $this->belongsTo(Year::class);
     }
+    public function abreviacion(){
+        $abreviacion;
+        if ($this->attributes['estacion_id'] === 1) {
+            $abreviacion = 'Inv';
+        } elseif ($this->attributes['estacion_id'] === 2) {
+            $abreviacion = 'Prim';
+        } elseif ($this->attributes['estacion_id'] === 3) {
+            $abreviacion = 'Ver';
+        } else {
+            $abreviacion = 'Oto';
+        }
+        
+    }
 }

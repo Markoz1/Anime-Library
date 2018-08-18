@@ -249,18 +249,12 @@
                             <div class="item-heading">Título</div>
                             <div class="colum-title">
                                 <a href="#">
-                                    <h4 class="item-title">
-                                        {{ $anime->titulo }}
-                                    </h4>
+                                    <h4 class="item-title">{{ $anime->titulo }}</h4>
                                 </a>
                             </div>
                             <div class="colum-fansub">
                                 @foreach ($anime->fansubs as $fansub)
-                                    @if (!$loop->last)
-                                        <a href="#">{{ $fansub->nombre }}</a>,
-                                    @else
-                                        <a href="#">{{ $fansub->nombre }}</a>
-                                    @endif  
+                                    <a href="#">{{$fansub->nombre}}</a>{{!$loop->last?",":""}}
                                 @endforeach
                             </div>
                         </div>
@@ -268,11 +262,7 @@
                             <div class="item-heading">Fansub</div>
                             <div>
                                 @foreach ($anime->fansubs as $fansub)
-                                    @if (!$loop->last)
-                                        <a href="#">{{ $fansub->nombre }}</a>,
-                                    @else
-                                        <a href="#">{{ $fansub->nombre }}</a>
-                                    @endif  
+                                    <a href="#">{{$fansub->nombre}}</a>{{!$loop->last?",":""}}
                                 @endforeach
                             </div>
                         </div>
@@ -292,28 +282,42 @@
                         <div class="item-col item-col-fuente">
                             <div class="item-heading">Fuente</div>
                                 @php
-                                    $fuentes = $anime->agruparFuentes();
-                                    
+                                    $fuentes = $anime->agruparFuentes();                                    
                                 @endphp
                                 @foreach ($fuentes as $fuenteVideo)
                                     @if ($loop->count>4 && $loop->iteration===4)
-                                        <a href="#">Más información</a>
+                                        <a class="fuente-anime" href="#">Más</a>
                                         @break
                                     @endif 
                                     <span class="fuente-anime" data-toggle="tooltip" data-placement="top" title="
-                                    {{ $fuenteVideo->get('nombre') }}
+                                    [{{ $fuenteVideo->get('nombre') }}] Ep:
                                     @foreach ($fuenteVideo->last() as $episodio)
-                                    {{$episodio->get('ini').'-'.$episodio->get('fin')}}
+                                        @if($episodio->get('ini') === $episodio->get('fin'))
+                                            {{$episodio->get('ini')}}
+                                        @else
+                                            {{$episodio->get('ini').'-'.$episodio->get('fin')}}
+                                        @endif
+                                        {{!$loop->last?",":""}}
                                     @endforeach
                                     " style="background-image: url({{ $fuenteVideo->get('imagen') }})"></span>                               
                                 @endforeach
-                                <div class="fuente-info-sm">
-                                @foreach ($anime->videos as $video)
+                            <div class="fuente-info-sm">
+                                @foreach ($fuentes as $fuenteVideo)
                                     @if ($loop->count>4 && $loop->iteration===4)
-                                        <a href="#">Más información</a>
+                                        <a href="#">Más</a>
                                         @break
                                     @endif 
-                                    <span class="fuente-anime-sm" data-toggle="tooltip" data-placement="top" title="{{ $video->fuente->nombre }}" style="background-image: url({{ $video->fuente->imagen }})"></span>                              
+                                    <span class="fuente-anime-sm" data-toggle="tooltip" data-placement="top" title="
+                                    [{{ $fuenteVideo->get('nombre') }}] Ep:
+                                    @foreach ($fuenteVideo->last() as $episodio)
+                                        @if($episodio->get('ini') === $episodio->get('fin'))
+                                            {{$episodio->get('ini')}}
+                                        @else
+                                            {{$episodio->get('ini').'-'.$episodio->get('fin')}}
+                                        @endif
+                                        {{!$loop->last?",":""}}
+                                    @endforeach
+                                    " style="background-image: url({{ $fuenteVideo->get('imagen') }})"></span>                              
                                 @endforeach
                             </div>
                         </div>
@@ -325,8 +329,26 @@
                                         <a href="#">Más información</a>
                                         @break
                                     @endif 
-                                    <div class="video-info" data-toggle="tooltip" data-placement="top" title="Ep. {{ $video->episodio_ini.'-'.$video->episodio_fin }}">{{ $video->nombre }} <small>(Softsubs)</small></div>
-                                    <div class="video-info-sm" data-toggle="tooltip" data-placement="top" title="Ep. 01-26 (Softsubs)">{{ $video->nombre }}</div>
+                                    <div class="video-info" data-toggle="tooltip" data-placement="top" title="Ep:
+                                    @foreach($video->episodios as $episodio)
+                                        @if($episodio->ini === $episodio->fin)
+                                            {{$episodio->ini}}
+                                        @else
+                                            {{$episodio->ini.'-'.$episodio->fin}}
+                                        @endif
+                                        {{!$loop->last?",":""}}
+                                    @endforeach
+                                    ">{{ $video->nombre }} <small>(Softsubs)</small></div>
+                                    <div class="video-info-sm" data-toggle="tooltip" data-placement="top" title="Ep:
+                                    @foreach($video->episodios as $episodio)
+                                        @if($episodio->ini === $episodio->fin)
+                                            {{$episodio->ini}}
+                                        @else
+                                            {{$episodio->ini.'-'.$episodio->fin}}
+                                        @endif
+                                        {{!$loop->last?",":""}}
+                                    @endforeach
+                                    (Softsubs)">{{ $video->nombre }}</div>
                                 @endforeach
                             </div>
                         </div>
@@ -356,8 +378,13 @@
                             <div class="item-heading temporada">Temporada</div>
                             <div class="item-heading temporada-sm">Temp.</div>
                             {{-- {{ $anime->temporada->nombre }} --}}
-                            <div class="temporada-info">Primavera 2018</div>
-                            <div class="temporada-info-sm">Prim. 2018</div>
+                            @if ($anime->temporada)
+                                <div class="temporada-info">{{ $anime->temporada->nombre }}</div>
+                                <div class="temporada-info-sm">{{ $anime->temporada->abreviacion() }}</div> 
+                            @else
+                                <div class="temporada-info">{{ date('Y', strtotime($anime->fecha_ini)).' - '.date('Y', strtotime($anime->fecha_fin)) }}</div>
+                                <div class="temporada-info-sm">{{ date('Y', strtotime($anime->fecha_ini)).' - '.date('Y', strtotime($anime->fecha_fin)) }}</div>    
+                            @endif                            
                         </div>
                         <div class="item-col fixed item-col-actions-dropdown">
                             <div class="item-actions-dropdown">

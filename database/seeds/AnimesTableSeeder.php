@@ -33,7 +33,6 @@ class AnimesTableSeeder extends Seeder
             'fecha_fin' => date_create('2010-05-26'),
             'tamano' => 16514.16,
             'version_id' => 1,
-            'temporada_id' => 174,
             'subtitulo_principal_id' => SubtituloPrincipal::create([
                 'tipo' => 1,
                 'idioma_id' => 2
@@ -183,6 +182,55 @@ class AnimesTableSeeder extends Seeder
             'formato_id' => 1,
             'canal_id' => 1
         ]);
+        Audio::create([
+            'nombre' => Formato::find(1)->nombre.' '.Canal::find(1)->nombre,
+            'anime_id' => 4,
+            'idioma_id' => 1,
+            'formato_id' => 1,
+            'canal_id' => 1
+        ]);
+        Audio::create([
+            'nombre' => Formato::find(1)->nombre.' '.Canal::find(1)->nombre,
+            'anime_id' => 4,
+            'idioma_id' => 3,
+            'formato_id' => 1,
+            'canal_id' => 1
+        ]);
+        Audio::create([
+            'nombre' => Formato::find(1)->nombre.' '.Canal::find(1)->nombre,
+            'anime_id' => 4,
+            'idioma_id' => 4,
+            'formato_id' => 1,
+            'canal_id' => 1
+        ]);
+        Audio::create([
+            'nombre' => Formato::find(1)->nombre.' '.Canal::find(1)->nombre,
+            'anime_id' => 4,
+            'idioma_id' => 5,
+            'formato_id' => 1,
+            'canal_id' => 1
+        ]);
+        Audio::create([
+            'nombre' => Formato::find(1)->nombre.' '.Canal::find(1)->nombre,
+            'anime_id' => 4,
+            'idioma_id' => 6,
+            'formato_id' => 1,
+            'canal_id' => 1
+        ]);
+        Audio::create([
+            'nombre' => Formato::find(1)->nombre.' '.Canal::find(1)->nombre,
+            'anime_id' => 4,
+            'idioma_id' => 7,
+            'formato_id' => 1,
+            'canal_id' => 1
+        ]);
+        Audio::create([
+            'nombre' => Formato::find(1)->nombre.' '.Canal::find(1)->nombre,
+            'anime_id' => 4,
+            'idioma_id' => 8,
+            'formato_id' => 1,
+            'canal_id' => 1
+        ]);
         Video::create([
             'nombre' => Resolucion::find(11)->nombre.' '.Contenedor::find(1)->nombre.' '.Codec::find(2)->nombre,
             'anime_id' => 4,
@@ -236,6 +284,45 @@ class AnimesTableSeeder extends Seeder
             'ini' => 22,
             'fin' => 26 ,
             'video_id' => 6
+        ]);
+        Video::create([
+            'nombre' => Resolucion::find(13)->nombre.' '.Contenedor::find(1)->nombre.' '.Codec::find(2)->nombre,
+            'anime_id' => 4,
+            'codec_id' => 2,
+            'contenedor_id' => 1,
+            'fuente_id' => 1,
+            'resolucion_id' => 13
+        ]);
+        Episodio::create([
+            'ini' => 27 ,
+            'fin' => 28 ,
+            'video_id' => 7
+        ]);
+        Video::create([
+            'nombre' => Resolucion::find(13)->nombre.' '.Contenedor::find(1)->nombre.' '.Codec::find(2)->nombre,
+            'anime_id' => 4,
+            'codec_id' => 2,
+            'contenedor_id' => 1,
+            'fuente_id' => 3,
+            'resolucion_id' => 13
+        ]);
+        Episodio::create([
+            'ini' => 29 ,
+            'fin' => 30 ,
+            'video_id' => 8
+        ]);
+        Video::create([
+            'nombre' => Resolucion::find(13)->nombre.' '.Contenedor::find(1)->nombre.' '.Codec::find(2)->nombre,
+            'anime_id' => 4,
+            'codec_id' => 2,
+            'contenedor_id' => 1,
+            'fuente_id' => 5,
+            'resolucion_id' => 13
+        ]);
+        Episodio::create([
+            'ini' => 31 ,
+            'fin' => 35 ,
+            'video_id' => 9
         ]);
     }
 }

@@ -1,9 +1,9 @@
 a:not(.btn) {
     text-decoration: none;
 }
-/* a:not(.btn):hover {
+a:not(.btn):hover {
     text-decoration: none;
-} */
+}
 .tooltip-inner {
   background-color: #343a40;
   border-radius: 0.25rem;
@@ -328,7 +328,7 @@ a:not(.btn) {
     .fuente-info-sm {
         display: flex;
         flex-wrap: wrap;
-        justify-content: space-between;
+        justify-content: left;
     }
     .content-audio-info-main {
         display: flex;
